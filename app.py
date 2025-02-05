@@ -1,5 +1,8 @@
 import streamlit as st
 
+# Primera prueba de sincronización con Hugging Face
+import streamlit as st
+
 # Configuración de la aplicación
 st.set_page_config(page_title="Análisis de Postura del Jinete", layout="wide")
 
