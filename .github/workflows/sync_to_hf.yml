@@ -16,8 +16,8 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git clone https://huggingface.co/spaces/inessoler11/AnálisisPostura
-          cd Análisis Postura
+          git clone https://huggingface.co/spaces/inessoler11/AnalisisPostura
+          cd AnalisisPostura
           cp -r ../* .
           git add .
           git commit -m "Actualizando Space desde GitHub"
