@@ -20,5 +20,20 @@ jobs:
           cd space_dir
           cp -r ../app.py ../requirements.txt .
           git add .
+- name: Configurar identidad en Git
+  run: |
+    git config --global user.email "inesitasoler@gmail.com"
+    git config --global user.name "inessoler11"
+
+- name: Push to Hugging Face Space
+  env:
+    HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  run: |
+    git clone https://huggingface.co/spaces/inessoler11/AnalisisPostura space_dir
+    cd space_dir
+    cp -r ../app.py ../requirements.txt .
+    git add .
+    git commit -m "Actualizando Space desde GitHub"
+    git push
           git commit -m "Actualizando Space desde GitHub"
           git push
