@@ -9,16 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Push to Hugging Face Space
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git clone https://huggingface.co/spaces/inessoler11/AnalisisPostura
-          cd AnalisisPostura
-          cp -r ../* .
-          git add .
-          git commit -m "Actualizando Space desde GitHub"
-          git push
+  env:
+    HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  run: |
+    git clone https://huggingface.co/spaces/inessoler11/AnalisisPostura space_dir
+    cd space_dir
+    cp -r ../app.py ../requirements.txt .
+    git add .
+    git commit -m "Actualizando Space desde GitHub"
+    git push
